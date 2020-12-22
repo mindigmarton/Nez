@@ -3,14 +3,16 @@
     <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
   </PropertyGroup>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+
   <PropertyGroup>
     <RootNamespace>Nez.Farseer</RootNamespace>
     <AssemblyName>Nez.FarseerPhysics</AssemblyName>
     <OutputType>Library</OutputType>
-    <TargetFramework>net471</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <IntermediateOutputPath>obj\Nez.FarseerPhysics\$(Configuration)</IntermediateOutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>bin\Release\Monogame</OutputPath>
   </PropertyGroup>
   
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -22,10 +24,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\Nez.Portable\Nez.csproj" />
+    <ProjectReference Include="..\Nez.Portable\Nez.Monogame.Standard.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.Portable" Version="3.7.1.189" PrivateAssets="all" />
+    		<PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
   </ItemGroup>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 </Project>
